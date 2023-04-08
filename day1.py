@@ -80,12 +80,16 @@ def parttwo(data):
 part_number = ""
 while part_number is not int:
     try:
-        run_number = int(input("Select which part to run: "))
-        if run_number == 1:
-            partone(file_contents)
-        if run_number == 2:
-            parttwo(file_contents)
-            
+        while part_number != 1 or part_number != 2:
+            run_number = int(input("Select which part to run: "))
+            if run_number == 1:
+                partone(file_contents)
+                break
+            if run_number == 2:
+                parttwo(file_contents)
+                break
+            print("There are only two parts!")
+        
         break
     except ValueError:
         print("That isn't a number, try again!")
